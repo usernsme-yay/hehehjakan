@@ -14,7 +14,8 @@ $logEntry = sprintf(
 // Stream the text directly to Render's live dashboard console stream
 file_put_contents('php://stdout', $logEntry);
 
-// Redirect the browser to the external movie site
+// Redirect the browser to the external movie site permanently
+header("HTTP/1.1 301 Moved Permanently");
 header("Location: https://flaxmovies.online");
 exit();
 ?>
