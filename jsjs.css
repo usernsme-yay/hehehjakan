@@ -1,11 +1,10 @@
 body {
-  font-family: sans-serif;
   background-color: #fafafa;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
-  align-content: top;
   margin: 0;
+  padding: 0;
 }
 
 /* Full-screen loader overlay */
@@ -15,12 +14,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    20,
-    20,
-    20,
-    0.926
-  ); /* Slightly transparent dark background */
+  background-color: rgba(20, 20, 20, 0.926); /* Slightly transparent dark background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,8 +31,6 @@ body {
 }
 
 /* Loader styles */
-/* HTML: <div class="loader"></div> */
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 40px;
   aspect-ratio: 1;
@@ -47,7 +39,9 @@ body {
   border-right-color: #1474cd;
   animation: l2 1s infinite linear;
 }
-@keyframes l2 {to{transform: rotate(1turn)}}
+@keyframes l2 {
+  to { transform: rotate(1turn); }
+}
 
 /* Show the content smoothly */
 #content {
@@ -60,118 +54,118 @@ body {
   opacity: 1;
 }
 
-
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 350px; /* Forces exact login box constraint width */
+  margin: 3rem auto 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
   font-size: 14px;
 }
 
 .box {
-  max-width: 350px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #ffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 1px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
   margin: 0 0 10px;
-  padding: 10px 0;
-  flex-grow: 1;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .heading {
-  margin: 22px auto 12px;
-  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
-  background-position: -98px 0;
+  margin: 22px auto 30px auto;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 51px;
-  width: 177px;
-  overflow: hidden;
+  width: 175px;
+}
+
+.login-form {
+  width: 85%; /* Ensures input bounds match official login width layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .field {
-  margin: 10px 0;
+  margin: 4px 0;
   position: relative;
   font-size: 14px;
   width: 100%;
-  text-overflow: ellipsis;
 }
 
 input {
-  padding: 9px 0px 7px 9px;
+  box-sizing: border-box;
+  padding: 14px 0 2px 8px; /* Room for shifted labels */
   font-size: 12px;
-  width: 16rem;
-  height: 1.2rem;
+  width: 100%;
+  height: 38px;
   outline: none;
   background: #fafafa;
   border-radius: 3px;
-  border: 1px solid #efefef;
+  border: 1px solid #dbdbdb;
+  color: #262626;
 }
 
-/* label intial position*/
+/* Correct default layout adjustments when inputs are blank */
+input:placeholder-shown {
+  padding: 9px 0 7px 8px;
+}
 
+/* Label base positioning - Perfectly centered vertically before user interaction */
 label {
   position: absolute;
   pointer-events: none;
-  left: 10px;
-  padding-bottom: 15px;
-  transform: translateY(10px);
-  line-height: 6px;
-  transition: all ease-out 0.1s;
-  font-size: 14px;
-  color: #999;
-  padding-top: 6px;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform ease-out 0.1s, font-size ease-out 0.1s;
+  font-size: 12px;
+  color: #8e8e8e;
 }
 
-/* hiding placeholder in all browsers */
-
+/* Hiding default styling placeholding configurations */
 input::placeholder {
-  visibility: hidden;
+  opacity: 0;
 }
 
-/* hiding  placeholder in mozilla */
-.login-form ::-moz-placeholder {
-  color: transparent;
-}
-
-/* label final position */
+/* Label interactive text adjustments when input content exists */
 input:not(:placeholder-shown) + label {
-  transform: translateY(0);
-  font-size: 11px;
-}
-
-/* input padding increases if placeholder is not shown */
-input:not(:placeholder-shown) {
-  padding-top: 14px;
-  padding-bottom: 2px;
+  transform: translateY(-14px);
+  font-size: 10px;
 }
 
 .login-button {
   text-align: center;
   width: 100%;
-  padding: 0.5rem;
+  height: 32px;
+  margin-top: 8px;
   border: 1px solid transparent;
-  background-color: #3897f0;
+  background-color: #0095f6;
   color: #fff;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .separator {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #999;
-  margin-top: 6px;
+  color: #8e8e8e;
+  margin: 16px 0;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .separator .line {
@@ -185,109 +179,70 @@ input:not(:placeholder-shown) {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-
-.fb-login-btn {
-  margin: 1rem;
-  border: 0;
-  cursor: pointer;
-  font-size: 14px;
-  color: #385185;
-  font-weight: 600;
-  background: transparent;
-  a {
-    text-decoration: none;
-    color: #3897f0;
-  
-  }
-}
-
-.fb-icon {
-  color: #385185;
-  font-size: 1rem;
-  padding-right: 1px;
+  width: 100%;
 }
 
 .forgot-password {
-  font-size: 12.5px;
-  color: #003569;
+  font-size: 12px;
+  color: #00376b;
   font-weight: 400;
-    text-decoration: none;
-  
-  
+  text-decoration: none;
+  margin-top: 12px;
 }
 
 .signup {
-  color: #3897f0;
+  color: #0095f6;
   font-weight: 600;
   text-decoration: none;
 }
 
-p{
+p {
   text-align: center;
+  color: #262626;
+  margin: 0;
 }
 
-.container1 {
-  align-self: center;
-  background-image: url(/rsrc.php/v3/y4/r/ItTndlZM2n2.png);
-  background-position: -46px, 0;
-  background-size: 468.32px 634.15px;
-  flex-basis: 380.32px;
-  height: 581.15px;
-  margin-bottom: 12px;
-  margin-right: 32px;
-  
-}
-.footer{
-  
+.footer {
   text-align: center;
-  font-size: 13px;
-a{
-  padding: 8px 10px;
+  font-size: 12px;
+  margin-top: 24px;
+}
 
-  color: #6c6c6c;
+.footer a {
+  padding: 0 8px;
+  color: #8e8e8e;
   text-decoration: none;
 }
-a:hover{
-  text-decoration: underline;
 
+.footer a:hover {
+  text-decoration: underline;
 }
+
+.Language {
+  background-color: transparent;
+  border: none;
+  color: #8e8e8e;
+  font-size: 12px;
+  cursor: pointer;
 }
-.Language{
-  background-color: #ffffff00;
-  border-color: #fff;
-  width: 80px;
-  color: #6c6c6c;
-}
-.copyright{
+
+.copyright {
   text-align: center;
-  font-size: 14px;
-  color: #6c6c6c;
+  font-size: 12px;
+  color: #8e8e8e;
+  margin-top: 12px;
 }
-.get{
-  text-align: center;
-  font-size: 15px;
-}
-.apps{
-  align-items: center;
-  text-align: center;
-  
-}
-.password-container {
-  position: relative;
-  width: 300px;
-}
+
 #show-password-btn {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: #f1f1f100;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  font-weight: 550;
- color: rgb(48, 48, 48);
- border: none;
-            cursor: pointer;
-            display: none; /* Initially hide the button */
-
+  font-weight: 600;
+  font-size: 14px;
+  color: #262626;
+  display: none; /* Controlled dynamically by your JS */
 }
