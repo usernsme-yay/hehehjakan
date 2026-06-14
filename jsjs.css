@@ -82,7 +82,7 @@ body {
 .heading {
   margin: 22px auto 30px auto;
   /* Dark mode compatible white Instagram text logo */
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png");
+  background-image: url("https://cdn.phototourl.com/free/2026-06-14-ab681a3c-ea6f-43ff-aa0d-ac3852cf095e.png");
   filter: invert(1); /* Inverts black text to white */
   background-size: contain;
   background-repeat: no-repeat;
